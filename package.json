@@ -1,0 +1,114 @@
+{
+  "name": "react-hook",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "https://griya.dexignzone.com/react/demo/login",
+  "homepage": "./",
+  "dependencies": {
+    "antd": "4.23.2",
+    "axios": "^0.27.2",
+    "classnames": "^2.3.1",
+    "echarts": "^5.3.3",
+    "env-cmd": "^10.1.0",
+    "glightbox": "^3.2.0",
+    "i18next": "^21.8.11",
+    "i18next-browser-languagedetector": "^6.1.4",
+    "i18next-xhr-backend": "^3.2.2",
+    "immutability-helper": "^3.1.1",
+    "inputmask": "^5.0.7",
+    "interactjs": "^1.10.14",
+    "jodit": "^3.18.9",
+    "line-awesome": "^1.3.0",
+    "moment": "^2.29.3",
+    "perfect-scrollbar": "^1.5.5",
+    "react": "17.0.2",
+    "react-big-calendar": "^1.5.0",
+    "react-color": "^2.19.3",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.17.3",
+    "react-nestable": "^2.0.0",
+    "react-resizable": "^3.0.4",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "sweetalert2": "11.4.19",
+    "uuid": "^8.3.2",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start:m": "react-app-rewired start",
+    "start:w": "react-app-rewired start",
+    "build:dev": "node ./update-build.js && env-cmd -f .env react-app-rewired build",
+    "build:staging": "node ./update-build.js && env-cmd -f .env.staging react-app-rewired build",
+    "build:prod": "node ./update-build.js && env-cmd -f .env.prod react-app-rewired build",
+    "format": "prettier --write \"{src,public}/**/*.js\"",
+    "lint": "eslint \"{src,public}/**/*.js\" --fix",
+    "final": "eslint \"{src,public}/**/*.js\" --fix && prettier --write \"{src,public}/**/*.js\"",
+    "test": "npx codeceptjs run",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^5.5.3",
+    "@playwright/test": "^1.23.0",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/node-logger": "^6.5.12",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "0.0.13",
+    "autoprefixer": "^10.4.7",
+    "babel-plugin-named-exports-order": "0.0.2",
+    "codeceptjs": "^3.3.3",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-n": "^15.2.3",
+    "eslint-plugin-prettier": "^4.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.4",
+    "less": "^4.1.3",
+    "less-loader": "^11.0.0",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "prop-types": "^15.8.1",
+    "react-app-rewired": "^2.2.1",
+    "tailwindcss": "^3.1.4",
+    "webpack": "^5.74.0"
+  }
+}

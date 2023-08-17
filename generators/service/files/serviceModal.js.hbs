@@ -1,0 +1,35 @@
+import axios from "axios";
+import {message} from "antd";
+
+import routerLinks from "utils/router-links";
+
+export const {{properCase listModalService}}Service = {
+  nameLink: '{{properCase listModalService}}',
+  get: async (params) => {
+    const { data } = await axios.get(routerLinks({{properCase listModalService}}Service.nameLink, "api"), { params });
+    return data;
+  },
+  getById: async (id) => {
+    const { data } = await axios.get(`${routerLinks({{properCase listModalService}}Service.nameLink, "api")}/${id}`);
+    return data;
+  },
+  post: async (values) => {
+    const { data } = await axios.post(routerLinks({{properCase listModalService}}Service.nameLink, "api"), values);
+    if (data.message) message.success(data.message);
+    return data;
+  },
+  put: async (values, id) => {
+    const { data } = await axios.put(`${routerLinks({{properCase listModalService}}Service.nameLink, "api")}/${id}`, values);
+    if (data.message) message.success(data.message);
+    return data;
+  },
+  delete: async (id) => {
+    const { data } = await axios.delete(`${routerLinks({{properCase listModalService}}Service.nameLink, "api")}/${id}`);
+    if (data.message) message.success(data.message);
+    return data;
+  },
+  brief: async (params) => {
+    const {data} = await axios.get(`${routerLinks({{properCase listModalService}}Service.nameLink, "api")}/brief` , {params});
+    return data;
+  },
+};

@@ -1,0 +1,87 @@
+import { Button, Popconfirm, Space, Tooltip } from "antd";
+import EditIcon from "assets/svg/edit.js";
+import RemoveIcon from "assets/svg/remove.js";
+
+export default ({ t, formatDate, handleEdit, handleDelete }) => {
+  return [
+    {
+      title: t("columns.admin.{{dashCase nameColumn}}."),
+      name: "name",
+      tableItem: {
+        filter: { type: "search" },
+        sorter: true,
+      },
+      formItem: {
+        rules: [{ type: "required" }],
+      },
+    },
+    {
+      title: t("columns.admin.{{dashCase nameColumn}}."),
+      name: "username",
+      tableItem: {
+        filter: { type: "search" },
+        sorter: true,
+      },
+      formItem: {
+        rules: [{ type: "required" }],
+      },
+    },
+    {
+      title: t("columns.admin.{{dashCase nameColumn}}."),
+      name: "email",
+      tableItem: {
+        filter: { type: "search" },
+        sorter: true,
+      },
+      formItem: {
+        rules: [{ type: "required" }, { type: "email" }],
+      },
+    },
+    {
+      title: t("columns.admin.{{dashCase nameColumn}}."),
+      name: "isActive",
+      tableItem: {
+        sorter: true,
+        render: (text) => text && <i className="las la-check-circle la-2x" />,
+      },
+      formItem: {
+        condition: (data) => !!data && data.id,
+        type: "switch",
+      },
+    },
+    {
+      title: t("columns.admin.{{dashCase nameColumn}}."),
+      tableItem: {
+        width: 110,
+        render: (text, record) => (
+          <Space size="middle">
+            {true && (
+              <Tooltip title={t("routes.admin.Layout.Edit")}>
+                <Button
+                  className="embed"
+                  type="link"
+                  onClick={() => handleEdit(record)}
+                  size="small"
+                  icon={<EditIcon />}
+                />
+              </Tooltip>
+            )}
+            {true && (
+              <Popconfirm
+                placement="left"
+                title={t("components.datatable.areYouSureWant")}
+                onConfirm={() => handleDelete(record.id)}
+                okText={t("components.datatable.ok")}
+                cancelText={t("components.datatable.cancel")}
+              >
+                <Tooltip title={t("routes.admin.Layout.Delete")}>
+                  <Button className="embed" type="link" size="small" icon={<RemoveIcon />} />
+                </Tooltip>
+              </Popconfirm>
+            )}
+          </Space>
+        ),
+      },
+    },
+  ];
+};

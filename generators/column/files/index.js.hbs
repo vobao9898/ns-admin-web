@@ -1,0 +1,6 @@
+import Column{{properCase nameColumn}} from "./{{dashCase nameColumn}}.js";
+{{#if listModal}}
+import Column{{properCase listModalColumn}} from "./{{dashCase listModalColumn}}.js";
+{{/if}}
+
+export { Column{{properCase nameColumn}}{{#if listModal}}, Column{{properCase listModalColumn}}{{/if}} };

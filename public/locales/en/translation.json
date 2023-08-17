@@ -1,0 +1,132 @@
+{
+  "components": {
+    "calendar": {
+      "more": "more"
+    },
+    "datatable": {
+      "pleaseEnterValueToSearch": "Search",
+      "reset": "Reset",
+      "search": "Search",
+      "areYouSureWant": "Are you sure want delete ?",
+      "cancel": "Cancel",
+      "ok": "Ok"
+    },
+    "form": {
+      "ruleRequired": "This is a required field!",
+      "ruleEmail": "Please enter a valid email address!",
+      "ruleUsername": "Username contains no special characters, only letters and numbers!",
+      "ruleMinLength": "Please enter at least {{min}} characters!",
+      "ruleMaxLength": "Please enter maximum {{max}} characters!",
+      "ruleMinNumberLength": "Please enter at least {{min}} number characters!",
+      "ruleMaxNumberLength": "Please enter maximum {{max}} number characters!",
+      "ruleMin": "Please enter minimum {{min}} number!",
+      "ruleMax": "Please enter maximum {{max}} number!",
+      "ruleMaxSize": "You can only upload up to {{max}}mb!",
+      "only text": "Please enter only text!",
+      "only number": "Please enter only number!",
+      "rulePassword": "Password must contain at least one uppercase letter and one number!",
+      "confirm": "Confirm",
+      "ruleConfirmPassword": "Two passwords that you enter is inconsistent!",
+      "rulesConfirmPassword": "Pin do not match",
+      "rulesConfirmPassword": "Two passwords that you enter is inconsistent!",
+      "incorrectPathFormat": "Incorrect path format",
+      "Enter": "Enter",
+      "Upload": "Upload",
+      "modal": {
+        "save": "Save",
+        "cancel": "Cancel"
+      }
+    },
+    "media-management": {
+      "filename": "File name",
+      "fileSize": "File size",
+      "lastModified": "Last modified",
+      "detail": "Detail",
+      "areYouSure": "Are you sure you want to delete?",
+      "mediaManagement": "Media Management",
+      "filesOnSystem": "Files on system",
+      "addFiles": "Add files",
+      "multiFiles": "Multi files",
+      "createFolder": "Create folder",
+      "uploadFile": "Upload file",
+      "moveUpLevel": "Move up a level",
+      "outsideLink": "Outside link",
+      "save": "Save",
+      "nameFolder": "Name folder",
+      "onlyLettersAndDigitsAllowed": "Only letters and digits allowed"
+    },
+    "message": {
+      "Success": "Success",
+      "Fail": "Fail",
+      "Close": "Close"
+    }
+  },
+  "titles": {
+    "Login": "Login",
+    "Pending Request": "Pending Request",
+    "Pending Request Profile": "Pending Request Profile",
+    "Approved Request": "Approved Request",
+    "Approved Request Profile": "Approved Request Profile",
+    "Rejected Request": "Rejected Request",
+    "Rejected Request Profile": "Rejected Request Profile",
+    "Merchant" : "Merchant",
+    "Add Merchant" : "Add Merchant",
+    "Template": "Template",
+    "Template Profile": "Template Profile",
+    "Pricing Plan": "Pricing Plan",
+    "Ticket": "Ticket",
+    "Market Place": "Market Place",
+    "Users": "Users",
+    "Logs": "Logs",
+    "Roles": "Roles"
+  },
+  "columns": {
+    "auth": {
+      "login": {
+        "Verification code": "Verification code",
+        "Username": "Username",
+        "Enter Username": "Enter Username",
+        "Enter Password": "Enter Password",
+        "password": "Password",
+        "remember": "Remember Me",
+        "New password": "New password",
+        "Enter new password": "Enter new password"
+      }
+    },
+    "admin": {
+      "columnAdmin": {
+      }
+    }
+  },
+  "routes": {
+    "auth": {
+      "login": {
+        "title": "Sign In",
+        "Verify": "Verification code",
+        "subTitle": "Enter your details to login to your account",
+        "Log In": "Log In",
+        "Forgot Password": "Forgot Password",
+        "Confirm Password": "Confirm Password",
+        "Reset password": "Reset Password",
+        "Another account": "Another account"
+      }
+    },
+    "admin": {
+      "Layout": {
+        "Search": "Search",
+        "English": "English",
+        "Vietnam": "Vietnamese",
+        "Available": "Available",
+        "Account Setting": "Account Setting",
+        "Sign out": "Sign out",
+        "Mark all as read": "Mark all as read",
+        "Setting": "Setting",
+        "Notifications": "Notifications",
+        "See All": "See All",
+        "Add": "Add new",
+        "Edit": "Edit",
+        "Delete": "Delete"
+      }
+    }
+  }
+}

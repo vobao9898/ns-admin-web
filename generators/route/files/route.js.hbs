@@ -1,0 +1,85 @@
+import React, {useState, Fragment, useEffect} from "react";
+import {Button, Space, } from "antd";
+import { useTranslation } from "react-i18next";
+
+import { useAuth } from "global";
+import { Column{{properCase nameColumn}}{{#if listModal}}, Column{{properCase listModalColumn}}{{/if}} } from "columns/{{dashCase nameColumn}}";
+import HookDataTable from "hooks/data-table";
+import HookModalForm from "hooks/modal/form";
+{{#if listModal}}
+import HookModalDrag from "hooks/modal/form/drag";
+{{/if}}
+import { {{properCase nameService}}Service } from "services/{{dashCase nameService}}";
+{{#if listModal}}
+import { {{properCase listModalService}}Service } from "services/{{dashCase listModalService}}";
+{{/if}}
+
+export default ({location}) => {
+  const { t } = useTranslation();
+  const { formatDate, changePermission, permission } = useAuth();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect( () => {
+  }, [location]);
+
+{{#if listModal}}
+  const [handleShowDrag{{properCase listModal}}, handleSaveDrag{{properCase listModal}}, itemDrag{{properCase listModal}}, ModalDrag{{properCase listModal}}] = HookModalDrag({
+    title: t("routes.admin.{{dashCase nameRouter}}."),
+    isLoading,
+    setIsLoading,
+    columns: Column{{properCase listModalColumn}}({ t, formatDate, }),
+    Get: {{properCase listModalService}}Service.get,
+    Put: {{properCase listModalService}}Service.put,
+    Post: {{properCase listModalService}}Service.post,
+    Delete: {{properCase listModalService}}Service.delete,
+    GetById: {{properCase listModalService}}Service.getById,
+    widthForm: 1200,
+    isReloadLoadToSave: true,
+  });
+{{/if}}
+
+  const [handleEdit{{properCase nameRouter}}, handleDelete{{properCase nameRouter}}, ModalForm{{properCase nameRouter}}] = HookModalForm({
+    title: (data) => !data?.id ? t('routes.admin.{{dashCase nameRouter}}.') : t('routes.admin.{{dashCase nameRouter}}.'),
+    isLoading, setIsLoading,
+    handleChange: async () => await handleChange{{properCase nameRouter}}(),
+    columns: Column{{properCase nameColumn}}({ t, formatDate }),
+    GetById: {{properCase nameService}}Service.getById,
+    Post: {{properCase nameService}}Service.post,
+    Put: {{properCase nameService}}Service.put,
+    Delete: {{properCase nameService}}Service.delete,
+    widthModal: 600,
+  });
+
+  const [handleChange{{properCase nameRouter}}, DataTable{{properCase nameRouter}}] = HookDataTable({
+    isLoading,
+    setIsLoading,
+    Get: {{properCase nameService}}Service.get,
+    columns: Column{{properCase nameColumn}}({ t, formatDate, handleEdit: handleEdit{{properCase nameRouter}}, handleDelete: handleDelete{{properCase nameRouter}} }),
+    rightHeader: (
+      <Space>
+{{#if listModal}}
+          {!!permission && (
+          <Button type="primary" onClick={() => handleShowDrag{{properCase listModal}}()}>
+            <i className="las la-sitemap" />
+            {t('routes.admin.{{dashCase nameRouter}}.')}
+          </Button>
+        )}
+{{/if}}
+       {!!permission && (
+          <Button type="primary" onClick={() => handleEdit{{properCase nameRouter}}()}>
+            <i className="las la-plus" />
+            {t('routes.admin.{{dashCase nameRouter}}.')}
+          </Button>
+        )}
+      </Space>
+    )
+  });
+
+  return <Fragment>
+{{#if listModal}}
+    {ModalDrag{{properCase listModal}}()}
+{{/if}}
+    {DataTable{{properCase nameRouter}}()}
+    {ModalForm{{properCase nameRouter}}()}
+  </Fragment>;
+};

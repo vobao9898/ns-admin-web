@@ -1,0 +1,14 @@
+.menu {
+  li { @apply cursor-pointer; }
+
+  .ant-collapse-header {
+    @apply flex-row-reverse py-1 items-center justify-between !important;
+  }
+
+  .child-item {
+    @apply pl-9 flex items-center before:w-2 hover:before:w-4;
+    &:before {
+      @apply rounded bg-blue-500 mr-5 ~'h-0.5' transition-all duration-300 ease-in-out;
+    }
+  }
+}
